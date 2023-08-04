@@ -93,7 +93,7 @@ const Question = () => {
               onlyNumbers
               useComma
               maxDecimals={2}
-              maxValue={99}
+              maxValue={999}
               value={input}
               ref={inputRef}
               ignorePlaceholderValidation
@@ -114,10 +114,11 @@ const Question = () => {
                 onlyNumbers
                 useComma
                 maxDecimals={2}
-                maxValue={99}
+                maxValue={999}
+                value={input2}
                 ignorePlaceholderValidation
                 onChange={(e) => {
-                  setInput2(e.target.value.replace(",", "."));
+                  setInput2(e.target.value);
                   setAnswerFeedback(<></>);
                 }}
                 placeholder="Answer..."
@@ -178,7 +179,7 @@ const Question = () => {
           setCurrQuestion(null);
           setInput("");
         }}
-        className="absolute bottom-8 bg-slate-50 text-zinc-950 rounded-lg px-8 py-2 text-lg font-medium"
+        className="absolute bottom-8 bg-slate-50 text-zinc-950 rounded-lg px-8 py-2 text-lg font-medium landscape:right-8"
       >
         {"Reset"}
       </button>
