@@ -10,6 +10,7 @@ function App() {
           </h1>
           <Question />
         </div>
+        <p className="text-2xs fixed bottom-2 left-2">Version 1.1.0</p>
       </main>
     </>
   );
