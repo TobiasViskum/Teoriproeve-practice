@@ -40,6 +40,18 @@ const Question = () => {
       >
         {"New Question"}
       </button>
+      <div className="flex flex-col items-center text-center gap-y-2 mt-4">
+        {currQuestion && currQuestion.explanation ? (
+          <>
+            <p className="underline text-lg text-neutral-400">Explanation:</p>
+            <p className="text-lg font-light text-balance">
+              {currQuestion.explanation}
+            </p>
+          </>
+        ) : (
+          <></>
+        )}
+      </div>
     </div>
   );
 

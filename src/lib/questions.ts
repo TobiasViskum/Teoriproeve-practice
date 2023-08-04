@@ -28,6 +28,8 @@ const questions: Question[] = [
     question:
       "Hvis børn under ___ år ikke anvender sikkerhedssele under kørsel får man et klip i kørekortet",
     answer: [15],
+    explanation:
+      "Man har som fører ansvar for børn sikkerhed, hvis der er under 15 år",
   },
   {
     question:
@@ -46,29 +48,30 @@ const questions: Question[] = [
     question:
       "Fra hvor stor en afstand skal positionslygterne kunne ses fra? (meter)",
     answer: [300],
+    explanation: "Det må ikke virke blændende",
   },
   {
     question: "Hvor langt skal nærlygterne kunne oplyse vejen? (meter)",
     answer: [30],
+    explanation: "Det må ikke virke blændende",
   },
   {
     question: "Hvor langt skal fjernlygterne kunne oplyse vejen? (meter)",
     answer: [100],
+    explanation: "Det må gerne virke blændende",
   },
   {
     question: "Det eneste lys på bilen der må virke blændende er fjernlyset",
     answer: [true],
   },
-  {
-    question: "Det eneste lys på bilen der må virke blændende er fjernlyset",
-    answer: [true],
-  },
+
   {
     question: "Ejeren er eneansvarlig for bilens stand?",
     answer: [false],
+    explanation: "Ejeren er kun ansvarlig for, at bilen er i lovlig stand",
   },
   {
-    question: "Ejeren er ansvarlig for at bilen er i lovlig stand?",
+    question: "Ejeren er ansvarlig for, at bilen er i lovlig stand?",
     answer: [true],
   },
   {
@@ -84,12 +87,13 @@ const questions: Question[] = [
     question:
       "Dæk skal være pumpet op til et lufttryk efter bilfabrikantens forskrifter",
     answer: [true],
+    explanation:
+      "Dæk skal ikke være punpet op til et lufttryk efter dækfabrikantents forskrifter men bilfabrikantens forskrifter",
   },
   {
     question: "Må man parkere i et vejkryds?",
     answer: [false],
   },
-
   {
     question:
       "En standsning er når man frivilligt holder stille under ___ minutter",
@@ -99,6 +103,8 @@ const questions: Question[] = [
     question:
       "På større befærdede veje må man standse og parkere i modsatte side af kørselsretningen",
     answer: [false],
+    explanation:
+      "Det må man dog gerne på mindre befærdede veje og ensrettede veje",
   },
   {
     question:
@@ -116,7 +122,7 @@ const questions: Question[] = [
   },
   {
     question:
-      "Må man standse eller parkere på motorveje, i nødsporet, i frakørsler/tilkørsler eller i rabatten i forlængelse med til fra- eller tilkørsel?",
+      "Må man standse eller parkere på motorveje, i nødsporet, i fra- og tilkørsler eller i rabatten i forlængelse med en fra- eller tilkørsel?",
     answer: [false],
   },
   {
@@ -296,6 +302,39 @@ const questions: Question[] = [
       "Advarselstrekanten skal placeres minimum ___ meter fra bilen på alle veje udover motorvejen",
     answer: [50],
   },
+  {
+    question:
+      "Bilen skal være forsynet med nummerpladelyfte, så den bagerste nummerplade tydeligt kan læses i mindst ___ meters afstand",
+    answer: [20],
+  },
+  // {
+  //   question: "",
+  //   answer: [50],
+  // },
+  // {
+  //   question: "",
+  //   answer: [50],
+  // },
+  // {
+  //   question: "",
+  //   answer: [50],
+  // },
+  // {
+  //   question: "",
+  //   answer: [50],
+  // },
+  // {
+  //   question: "",
+  //   answer: [50],
+  // },
+  // {
+  //   question: "",
+  //   answer: [50],
+  // },
+  // {
+  //   question: "",
+  //   answer: [50],
+  // },
 ];
 
 export default questions;
