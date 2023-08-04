@@ -89,11 +89,7 @@ const questions: Question[] = [
     question: "Må man parkere i et vejkryds?",
     answer: [false],
   },
-  {
-    question:
-      "Hvor tæt må man standse og parkere fra det nærmeste kryds? (meter)",
-    answer: [true],
-  },
+
   {
     question:
       "En standsning er når man frivilligt holder stille under ___ minutter",
@@ -197,6 +193,108 @@ const questions: Question[] = [
     question:
       "Parkering er forbudt ved siden af et anden køretøj der allerede holder parkeret i vejkantent",
     answer: [true],
+  },
+  {
+    question: "Skal bilen have asymmetrisk fjernlys?",
+    answer: [false],
+  },
+  {
+    question: "Skal bilen have asymmetrisk nærlys?",
+    answer: [true],
+  },
+  {
+    question:
+      "Nærlyset skal have et fald på ___%, dvs. ___ centimeter pr. meter",
+    answer: [1, 1],
+  },
+  {
+    question:
+      "Man må krydse en spærreflade såfremt, at skraveringen peger mod kørselsretningen, og at spærrefladen er begrænset af en punkteret linje",
+    answer: [true],
+  },
+  {
+    question:
+      "Hvis kørsel er tilladt i en gågade er den normalt anbefalede hasighed ___ km/t",
+    answer: [15],
+  },
+  {
+    question: "Biler må gerne køre i en gågade",
+    answer: [false],
+  },
+  {
+    question:
+      "Hvis hastigheden fordobles bliver bremselængden ___ gange så høj",
+    answer: [4],
+  },
+  {
+    question: "Der skal være to lygter med baglys",
+    answer: [true],
+  },
+  {
+    question: "Der skal være to lygter med stoplys",
+    answer: [false],
+  },
+  {
+    question: "Der skal være ___ lygter med stoplys",
+    answer: [3],
+  },
+  {
+    question:
+      "Der skal være to røde godkendte og mærkede bagud vendte reflekser, som ikke må være trekantede",
+    answer: [2],
+  },
+  {
+    question: "Baglygternes lys skal være rødt",
+    answer: [true],
+  },
+  {
+    question:
+      "Baglygterne skal kunne ses fra ___ meters afstand uden at blænde",
+    answer: [300],
+  },
+  {
+    question:
+      "De mest udsatte i en rundkørsel er fodgængere, cyklister og små køretøjer som knallerter",
+    answer: [true],
+  },
+  {
+    question:
+      "Det er en god idé at sætte hastigheden ned inden man kører ind i en tunnel, for at øjnene kan vænne sig til det nye lys",
+    answer: [true],
+  },
+  {
+    question:
+      "Hvis et lyssignal kun viser gult, er det i gang med at blive rødt",
+    answer: [true],
+  },
+  {
+    question:
+      "Hvis et lyssignal kun viser gult, er det i gang med at blive grønt",
+    answer: [false],
+  },
+  {
+    question: "Skal man bruge nærlys under kørsel i tunnel?",
+    answer: [true],
+  },
+  {
+    question:
+      "En passende hastighed på en lige landevej med sne på vil være ___ km/t",
+    answer: [40],
+  },
+  {
+    question:
+      "Hvis jeg er med i et uheld, skal jeg oplyse navn og adresse til alle involverede",
+    answer: [true],
+  },
+  {
+    question:
+      "Advarselstrekanten skal placeres ___ meter fra bilen på motorvejen",
+    answer: [100],
+  },
+  {
+    question:
+      "Advarselstrekanten skal placeres minimum ___ meter fra bilen på alle veje udover motorvejen",
+    answer: [50],
   },
 ];
 
