@@ -184,16 +184,22 @@ const questions: Question[] = [
     question:
       "En standsning indebærer også af- og pålæsning af vare eller personer",
     answer: [true],
+    explanation:
+      "Dvs. hvis man bruger 30 minutter på pålæsning af vare, er dette stadig en standsning",
   },
   {
     question:
       "Standsning er tilladt nærmere end ___ meter før eller efter en jernbane",
     answer: [30],
+    explanation:
+      "I dette område må man ikke parkere. Selvfølgelig må man hverken standse eller parkere på selve jernbanen",
   },
   {
     question:
       "Er parkering forbudt på kørebanen på hovedveje udenfor tættere bebygget område?",
     answer: [true],
+    explanation:
+      "Hvis du holder i rabatten på en hovedvej må du gerne parkere. I begge tilfælde må man gerne foretage en standsning",
   },
   {
     question:
@@ -203,6 +209,7 @@ const questions: Question[] = [
   {
     question: "Skal bilen have asymmetrisk fjernlys?",
     answer: [false],
+    explanation: "Bilen skal kun have asymetrisk nærlys",
   },
   {
     question: "Skal bilen have asymmetrisk nærlys?",
@@ -222,10 +229,13 @@ const questions: Question[] = [
     question:
       "Hvis kørsel er tilladt i en gågade er den normalt anbefalede hasighed ___ km/t",
     answer: [15],
+    explanation:
+      "Da gående har ret til at være der, skal man køre meget langsomt, for også at passe på dem",
   },
   {
     question: "Biler må gerne køre i en gågade",
     answer: [false],
+    explanation: "Biler må kun køre i en gågade, hvis dette er angivet",
   },
   {
     question:
@@ -239,6 +249,7 @@ const questions: Question[] = [
   {
     question: "Der skal være to lygter med stoplys",
     answer: [false],
+    explanation: "Der skal være 3 lygter med stoplys",
   },
   {
     question: "Der skal være ___ lygter med stoplys",
