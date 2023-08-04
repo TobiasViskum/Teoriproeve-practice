@@ -1,4 +1,4 @@
-type Question = {
+interface Question {
   question: string;
-  answer: number | boolean;
-};
+  answer: (number | boolean)[];
+}

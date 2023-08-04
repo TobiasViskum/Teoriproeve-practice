@@ -1,11 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Input } from ".";
 
 import questions from "../lib/questions";
 
 const Question = () => {
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  const inputRef2 = useRef<HTMLInputElement | null>(null);
   const [currQuestion, setCurrQuestion] = useState<Question | null>(null);
   const [answerFeedback, setAnswerFeedback] = useState(<></>);
   const [input, setInput] = useState("");
+  const [input2, setInput2] = useState("");
 
   const generateNewQuestion = () => {
     const newQuestionObject =
@@ -24,7 +28,14 @@ const Question = () => {
         onClick={() => {
           setAnswerFeedback(<></>);
           setInput("");
+          setInput2("");
           generateNewQuestion();
+          if (inputRef.current) {
+            inputRef.current.value = "";
+          }
+          if (inputRef2.current) {
+            inputRef2.current.value = "";
+          }
         }}
       >
         {"New Question"}
@@ -32,14 +43,23 @@ const Question = () => {
     </div>
   );
 
-  const sendAnswer = (answer: number | boolean) => {
-    console.log(answer);
-
+  const sendAnswer = (answer: (number | boolean)[]) => {
     if (currQuestion) {
-      if (answer === currQuestion.answer) {
-        setAnswerFeedback(correctAnswer);
+      if (currQuestion.answer.length === 1) {
+        if (answer[0] === currQuestion.answer[0]) {
+          setAnswerFeedback(correctAnswer);
+        } else {
+          setAnswerFeedback(wrongAnswer);
+        }
       } else {
-        setAnswerFeedback(wrongAnswer);
+        if (
+          answer[0] === currQuestion.answer[0] &&
+          answer[1] === currQuestion.answer[1]
+        ) {
+          setAnswerFeedback(correctAnswer);
+        } else {
+          setAnswerFeedback(wrongAnswer);
+        }
       }
     }
   };
@@ -66,27 +86,65 @@ const Question = () => {
             {currQuestion.question}
           </p>
         </div>
-        {typeof currQuestion.answer === "number" ? (
+        {typeof currQuestion.answer[0] !== "boolean" ? (
           <div className="flex items-center flex-col gap-y-4">
-            <input
+            <Input
               spellCheck={false}
-              inputMode="numeric"
-              pattern="[0-9]"
+              onlyNumbers
+              useComma
+              maxDecimals={2}
+              maxValue={99}
               value={input}
+              ref={inputRef}
+              ignorePlaceholderValidation
               onChange={(e) => {
                 setInput(e.target.value);
                 setAnswerFeedback(<></>);
               }}
               placeholder="Answer..."
-              className="border-neutral-400 bg-neutral-950 border outline-0 py-1 text-center rounded-lg placeholder-neutral-600"
+              styling={{
+                main: "border-neutral-400 bg-neutral-950 border focus:outline-0 py-1 text-center rounded-lg placeholder-neutral-600 text-slate-50",
+                feedbackText: "text-2xs bg-neutral-950 rounded-md -bottom-2.5",
+              }}
             />
+            {currQuestion.answer.length === 2 && (
+              <Input
+                ref={inputRef2}
+                spellCheck={false}
+                onlyNumbers
+                useComma
+                maxDecimals={2}
+                maxValue={99}
+                ignorePlaceholderValidation
+                onChange={(e) => {
+                  setInput2(e.target.value.replace(",", "."));
+                  setAnswerFeedback(<></>);
+                }}
+                placeholder="Answer..."
+                styling={{
+                  main: "border-neutral-400 bg-neutral-950 border focus:outline-0 py-1 text-center rounded-lg placeholder-neutral-600 text-slate-50",
+                  feedbackText:
+                    "text-2xs bg-neutral-950 rounded-md -bottom-2.5",
+                }}
+              />
+            )}
             {input !== "" && (
               <button
                 className="border-neutral-400 bg-neutral-950 border outline-0 py-1 text-center rounded-lg w-1/2"
                 onClick={() => {
-                  const numbered = Number(input);
-                  if (!isNaN(numbered)) {
-                    sendAnswer(numbered);
+                  const numbered = Number(input.replace(",", "."));
+                  const numbered2 = Number(input2.replace(",", "."));
+                  if (
+                    !isNaN(numbered) &&
+                    (currQuestion.answer.length === 2
+                      ? !isNaN(numbered2)
+                      : true)
+                  ) {
+                    if (currQuestion.answer.length === 1) {
+                      sendAnswer([numbered]);
+                    } else {
+                      sendAnswer([numbered, numbered2]);
+                    }
                   } else {
                     setAnswerFeedback(wrongAnswer);
                   }
@@ -99,13 +157,13 @@ const Question = () => {
         ) : (
           <div className="flex gap-x-4">
             <button
-              onClick={() => sendAnswer(true)}
+              onClick={() => sendAnswer([true])}
               className="border-neutral-400 bg-neutral-950 border outline-0 py-1 text-center rounded-lg px-6"
             >
               True
             </button>
             <button
-              onClick={() => sendAnswer(false)}
+              onClick={() => sendAnswer([false])}
               className="border-neutral-400 bg-neutral-950 border outline-0 py-1 text-center rounded-lg px-6"
             >
               False
