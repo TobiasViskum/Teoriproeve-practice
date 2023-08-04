@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  @apply bg-zinc-950 text-slate-50;
+}
