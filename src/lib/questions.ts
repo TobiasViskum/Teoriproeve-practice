@@ -343,14 +343,16 @@ const questions: Question[] = [
       "Maksimale vægt af en personbil med eller uden påhængskøretøj må højst være ___ kg",
     answer: [3500],
   },
-  // {
-  //   question: "",
-  //   answer: [50],
-  // },
-  // {
-  //   question: "",
-  //   answer: [50],
-  // },
+  {
+    question:
+      "Hvis noget på din bil rager mere end ___ meter bagud eller foran skal dette afmærkes",
+    answer: [1],
+  },
+  {
+    question:
+      "Hvis noget på din bil rager mere end ___ centimeter ud over siderneskal dette afmærkes",
+    answer: [15],
+  },
 ];
 
 export default questions;
