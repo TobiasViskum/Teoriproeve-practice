@@ -318,26 +318,31 @@ const questions: Question[] = [
       "Bilen skal være forsynet med nummerpladelyfte, så den bagerste nummerplade tydeligt kan læses i mindst ___ meters afstand",
     answer: [20],
   },
-  // {
-  //   question: "",
-  //   answer: [50],
-  // },
-  // {
-  //   question: "",
-  //   answer: [50],
-  // },
-  // {
-  //   question: "",
-  //   answer: [50],
-  // },
-  // {
-  //   question: "",
-  //   answer: [50],
-  // },
-  // {
-  //   question: "",
-  //   answer: [50],
-  // },
+  {
+    question:
+      "Overskridelse af hastighedsgrænsen med mere end ___% giver ___ klip i kørekortet",
+    answer: [30, 1],
+  },
+  {
+    question:
+      "Overskridelse af hastighedsgrænsen med mere end 20% giver 1 klip i kørekortet ved kørsel forbi et vejarbejde",
+    answer: [false],
+  },
+  {
+    question:
+      "Overskridelse af hastighedsgrænsen med mere end ___% giver betinget frakendelse af kørekortet",
+    answer: [60],
+  },
+  {
+    question:
+      "Overskridelse af hastighedsgrænsen med mere end ___% giver betinget frakendelse af kørekortet ved kørsel forbi et vejarbejde",
+    answer: [40],
+  },
+  {
+    question:
+      "Maksimale vægt af en personbil med eller uden påhængskøretøj må højst være ___ kg",
+    answer: [3500],
+  },
   // {
   //   question: "",
   //   answer: [50],

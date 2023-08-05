@@ -105,7 +105,7 @@ const Question = () => {
               onlyNumbers
               useComma
               maxDecimals={2}
-              maxValue={999}
+              maxValue={9999}
               value={input}
               ref={inputRef}
               ignorePlaceholderValidation
@@ -126,7 +126,7 @@ const Question = () => {
                 onlyNumbers
                 useComma
                 maxDecimals={2}
-                maxValue={999}
+                maxValue={9999}
                 value={input2}
                 ignorePlaceholderValidation
                 onChange={(e) => {
