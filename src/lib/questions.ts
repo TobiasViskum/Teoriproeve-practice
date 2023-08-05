@@ -29,7 +29,7 @@ const questions: Question[] = [
       "Hvis børn under ___ år ikke anvender sikkerhedssele under kørsel får man et klip i kørekortet",
     answer: [15],
     explanation:
-      "Man har som fører ansvar for børn sikkerhed, hvis der er under 15 år",
+      "Man har som fører ansvar for børns sikkerhed, hvis der er under 15 år",
   },
   {
     question:
@@ -327,6 +327,7 @@ const questions: Question[] = [
     question:
       "Overskridelse af hastighedsgrænsen med mere end 20% giver 1 klip i kørekortet ved kørsel forbi et vejarbejde",
     answer: [false],
+    explanation: "Dette gælder kun ved en hastighedsoverskridelse med mere 30%",
   },
   {
     question:
