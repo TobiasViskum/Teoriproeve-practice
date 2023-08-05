@@ -5,11 +5,11 @@ const questions: Question[] = [
     answer: [5],
   },
   {
-    question: "Må man standse eller parkere på en bro over en motorvej?",
+    question: "Man må standse eller parkere på en bro over en motorvej?",
     answer: [false],
   },
   {
-    question: "Må man standse eller parkere i et uoverskueligt vejsving?",
+    question: "Man må standse eller parkere i et uoverskueligt vejsving?",
     answer: [false],
   },
   {
@@ -91,7 +91,7 @@ const questions: Question[] = [
       "Dæk skal ikke være punpet op til et lufttryk efter dækfabrikantents forskrifter men bilfabrikantens forskrifter",
   },
   {
-    question: "Må man parkere i et vejkryds?",
+    question: "Man må parkere i et vejkryds?",
     answer: [false],
   },
   {
@@ -108,21 +108,21 @@ const questions: Question[] = [
   },
   {
     question:
-      "Må man standse eller parkere på reseverede parkeringspladser (taxi, handicap mm.)",
+      "Man må standse eller parkere på reseverede parkeringspladser (taxi, handicap mm.)",
     answer: [false],
   },
   {
     question:
-      "Må man standse eller parkere, hvis der er en ubrudt gul linje på kantstenen?",
+      "Man må standse eller parkere, hvis der er en ubrudt gul linje på kantstenen?",
     answer: [false],
   },
   {
-    question: "Må man standse eller parkere på cykelstier?",
+    question: "Man må standse eller parkere på cykelstier?",
     answer: [false],
   },
   {
     question:
-      "Må man standse eller parkere på motorveje, i nødsporet, i fra- og tilkørsler eller i rabatten i forlængelse med en fra- eller tilkørsel?",
+      "Man må standse eller parkere på motorveje, i nødsporet, i fra- og tilkørsler eller i rabatten i forlængelse med en fra- eller tilkørsel?",
     answer: [false],
   },
   {

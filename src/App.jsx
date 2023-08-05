@@ -10,7 +10,7 @@ function App() {
           </h1>
           <Question />
         </div>
-        <p className="text-2xs fixed bottom-6 left-6">Version 1.1.8-5</p>
+        <p className="text-2xs fixed bottom-6 left-6">Version 1.1.9</p>
       </main>
     </>
   );
