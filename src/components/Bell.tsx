@@ -13,18 +13,17 @@ const Bell = () => {
         setPermission(result);
       });
     } catch (err) {
-      console.log("Couldn't ask for notification permission");
+      console.log("Couldn't ask for notification permissions");
     }
   };
 
-  // useEffect(() => {
-  //   if (
-  //     Notification.permission &&
-  //     typeof Notification.permission === "string"
-  //   ) {
-  //     setPermission(Notification.permission);
-  //   }
-  // }, []);
+  useEffect(() => {
+    try {
+      setPermission(Notification.permission);
+    } catch (err) {
+      console.log("Couldn't read notification permissions");
+    }
+  }, []);
 
   return (
     <>
