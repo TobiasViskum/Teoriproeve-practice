@@ -17,14 +17,16 @@ const Bell = () => {
     }
   };
 
-  let supportsNotificationPermissions = true;
+  let supportsNotificationPermissions = false;
 
-  try {
-    setPermission(Notification.permission);
-    supportsNotificationPermissions = true;
-  } catch (err) {
-    supportsNotificationPermissions = false;
-  }
+  useEffect(() => {
+    try {
+      setPermission(Notification.permission);
+      supportsNotificationPermissions = true;
+    } catch (err) {
+      supportsNotificationPermissions = false;
+    }
+  }, []);
 
   if (supportsNotificationPermissions) {
     return (
