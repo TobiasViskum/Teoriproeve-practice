@@ -26,7 +26,7 @@ const Bell = () => {
   }, []);
 
   try {
-    Notification.permission;
+    const test = Notification.permission;
     return (
       <>
         <img
