@@ -8,9 +8,13 @@ const Bell = () => {
   >("default");
 
   const subscribe = () => {
-    Notification.requestPermission().then((result) => {
-      setPermission(result);
-    });
+    try {
+      Notification.requestPermission().then((result) => {
+        setPermission(result);
+      });
+    } catch (err) {
+      console.log("Couldn't ask for notification permission");
+    }
   };
 
   useEffect(() => {
