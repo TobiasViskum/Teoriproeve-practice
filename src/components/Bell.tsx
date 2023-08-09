@@ -17,34 +17,27 @@ const Bell = () => {
     }
   };
 
-  let supportsNotificationPermissions = false;
-
   useEffect(() => {
     try {
-      supportsNotificationPermissions = true;
       setPermission(Notification.permission);
     } catch (err) {
-      supportsNotificationPermissions = false;
+      console.log("Couldn't read notification permissions");
     }
   }, []);
 
-  if (supportsNotificationPermissions) {
-    return (
-      <>
-        <img
-          onClick={subscribe}
-          src={bell}
-          alt="bell"
-          className={twJoin(
-            "fixed top-4 right-4 w-8 h-8",
-            permission === "granted" ? "" : "animate-bounce"
-          )}
-        />
-      </>
-    );
-  } else {
-    return <></>;
-  }
+  return (
+    <>
+      <img
+        onClick={subscribe}
+        src={bell}
+        alt="bell"
+        className={twJoin(
+          "fixed top-4 right-4 w-8 h-8",
+          permission === "granted" ? "" : "animate-bounce"
+        )}
+      />
+    </>
+  );
 };
 
 export default Bell;
