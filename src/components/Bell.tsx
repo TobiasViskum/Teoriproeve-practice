@@ -17,14 +17,14 @@ const Bell = () => {
     }
   };
 
-  useEffect(() => {
-    if (
-      Notification.permission &&
-      typeof Notification.permission === "string"
-    ) {
-      setPermission(Notification.permission);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (
+  //     Notification.permission &&
+  //     typeof Notification.permission === "string"
+  //   ) {
+  //     setPermission(Notification.permission);
+  //   }
+  // }, []);
 
   return (
     <>
