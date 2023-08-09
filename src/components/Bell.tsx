@@ -20,6 +20,7 @@ const Bell = () => {
   let supportsNotificationPermissions = true;
 
   try {
+    setPermission(Notification.permission);
     supportsNotificationPermissions = true;
   } catch (err) {
     supportsNotificationPermissions = false;
