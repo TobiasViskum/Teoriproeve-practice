@@ -3,7 +3,9 @@ import { bell } from "../assets";
 import { twJoin } from "tailwind-merge";
 
 const Bell = () => {
-  const [permission, setPermission] = useState(Notification.permission);
+  const [permission, setPermission] = useState(
+    Notification.permission || "default"
+  );
 
   const subscribe = () => {
     Notification.requestPermission().then((result) => {
