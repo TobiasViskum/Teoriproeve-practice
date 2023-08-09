@@ -2,19 +2,44 @@ import React, { useEffect, useRef, useState } from "react";
 import { Input } from ".";
 
 import questions from "../lib/questions";
+import { QuestionType } from "../types";
 
 const Question = () => {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const inputRef2 = useRef<HTMLInputElement | null>(null);
-  const [currQuestion, setCurrQuestion] = useState<Question | null>(null);
+  const [currQuestion, setCurrQuestion] = useState<QuestionType | null>(null);
   const [answerFeedback, setAnswerFeedback] = useState(<></>);
   const [input, setInput] = useState("");
   const [input2, setInput2] = useState("");
+  const [streak, setStreak] = useState(0);
 
   const generateNewQuestion = () => {
     const newQuestionObject =
       questions[Math.floor(Math.random() * questions.length)];
     setCurrQuestion(newQuestionObject);
+  };
+
+  const correctAction = () => {
+    setStreak((prev) => prev + 1);
+    setAnswerFeedback(correctAnswer);
+  };
+
+  const wrongAction = () => {
+    setStreak(0);
+    setAnswerFeedback(wrongAnswer);
+  };
+
+  const newQuestionAction = () => {
+    setAnswerFeedback(<></>);
+    setInput("");
+    setInput2("");
+    generateNewQuestion();
+    if (inputRef.current) {
+      inputRef.current.value = "";
+    }
+    if (inputRef2.current) {
+      inputRef2.current.value = "";
+    }
   };
 
   const wrongAnswer = (
@@ -25,18 +50,7 @@ const Question = () => {
       <p className="text-green-400 font-medium">{"Correct answer!"}</p>
       <button
         className="bg-slate-50 text-zinc-950 rounded-lg px-4 py-0.5 text-lg font-medium"
-        onClick={() => {
-          setAnswerFeedback(<></>);
-          setInput("");
-          setInput2("");
-          generateNewQuestion();
-          if (inputRef.current) {
-            inputRef.current.value = "";
-          }
-          if (inputRef2.current) {
-            inputRef2.current.value = "";
-          }
-        }}
+        onClick={() => newQuestionAction()}
       >
         {"New Question"}
       </button>
@@ -59,18 +73,18 @@ const Question = () => {
     if (currQuestion) {
       if (currQuestion.answer.length === 1) {
         if (answer[0] === currQuestion.answer[0]) {
-          setAnswerFeedback(correctAnswer);
+          correctAction();
         } else {
-          setAnswerFeedback(wrongAnswer);
+          wrongAction();
         }
       } else {
         if (
           answer[0] === currQuestion.answer[0] &&
           answer[1] === currQuestion.answer[1]
         ) {
-          setAnswerFeedback(correctAnswer);
+          correctAction();
         } else {
-          setAnswerFeedback(wrongAnswer);
+          wrongAction();
         }
       }
     }
@@ -93,6 +107,10 @@ const Question = () => {
     <>
       <div className="flex flex-col gap-y-6 items-center relative h-full">
         <div className="flex flex-col items-center text-center gap-y-2">
+          <div className="text-lg text-slate-50 flex gap-x-2 font-medium bg-neutral-800 px-6 py-1 rounded-2xl">
+            Answer streak: <p className="text-green-500 font-bold">{streak}</p>
+          </div>
+
           <p className="underline text-lg text-neutral-400">Question:</p>
           <p className="text-xl font-medium text-balance">
             {currQuestion.question}
@@ -190,6 +208,7 @@ const Question = () => {
           setAnswerFeedback(<></>);
           setCurrQuestion(null);
           setInput("");
+          setStreak(0);
         }}
         className="absolute bottom-8 bg-slate-50 text-zinc-950 rounded-lg px-8 py-2 text-lg font-medium landscape:right-8"
       >

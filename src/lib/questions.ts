@@ -1,4 +1,6 @@
-const questions: Question[] = [
+import { QuestionType } from "../types";
+
+const questions: QuestionType[] = [
   {
     question:
       "Hvor tæt må man standse og parkere foran et fodgængerfelt? (meter)",
@@ -258,7 +260,7 @@ const questions: Question[] = [
   {
     question:
       "Der skal være to røde godkendte og mærkede bagud vendte reflekser, som ikke må være trekantede",
-    answer: [2],
+    answer: [true],
   },
   {
     question: "Baglygternes lys skal være rødt",
