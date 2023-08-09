@@ -21,8 +21,8 @@ const Bell = () => {
 
   useEffect(() => {
     try {
-      setPermission(Notification.permission);
       supportsNotificationPermissions = true;
+      setPermission(Notification.permission);
     } catch (err) {
       supportsNotificationPermissions = false;
     }
