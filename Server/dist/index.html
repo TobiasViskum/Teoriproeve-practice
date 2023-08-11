@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <link rel="manifest" href="/manifest.json" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <title>Teoriprøve Practice</title>
+    <script type="module" crossorigin src="/assets/index-00c0670f.js"></script>
+    <link rel="stylesheet" href="/assets/index-9b750aae.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/sw.js").then((registration) => {
+          registration.pushManager.getSubscription().then((res) => {
+            console.log(res);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
